@@ -2,10 +2,8 @@
 
 import React from 'react'
 
-var App = React.createClass({
-  render: function () {
-    return <h1>Aplicação</h1>
-  }
-})
+const App = () => (
+  <div>My App</div>
+)
 
 export default App

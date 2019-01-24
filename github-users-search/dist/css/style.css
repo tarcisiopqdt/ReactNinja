@@ -1,0 +1,100 @@
+body, h1, h2, h3, p, ul {
+	padding: 0px;
+	margin: 0px;
+}
+
+body {
+	font-family: Georgia, serif;
+  color: #252525;
+  background-color: #c2c2c2;
+}
+
+ul {
+  list-style: none;
+}
+
+* {
+	box-sizing: border-box;
+}
+
+.app{
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: white ;
+}
+.app::after, .app::before{
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.title{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 28px;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+.search input {
+  margin: 20px 0px;
+  width: 100%;
+  height: 40px;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid gray;
+  font-size: 18px;
+}
+
+.user-info img{
+  float: left;
+  margin: 0 20px 20px 0;
+  max-height: 200px;
+}
+
+.user-name a{
+  text-transform: uppercase;
+  text-decoration: none;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+  font-size: 1.2em;
+  color: #5b5959;
+}
+.user-name a:hover{
+  color: black;
+}
+
+.repos-info li {
+  padding: 10px;
+}
+
+.actions, .repos, .starred {
+  float: left;
+  width: 100%;
+}
+
+.actions{
+  display: flex;
+  justify-content: space-between;
+}
+.actions button{
+  width: 90%;
+  padding: 10px;
+  text-transform: uppercase;
+  color: white;
+  background-color: #5b5959;
+  cursor: pointer;
+  border: 0px; 
+}
+  .actions button:hover{
+  background-color: black;
+}
+
+.repos h2 , .starred h2{
+  margin: 10px 0px;
+  font-size: 28px;
+  font-family: 'Trebuchet MS', Arial, sans-serif;
+}
+
+.repos li a, .starred li a{
+  font-size: 20px;
+  text-decoration: none;
+}
