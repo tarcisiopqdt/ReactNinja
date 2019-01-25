@@ -19,7 +19,7 @@ ul {
 
 .app{
   max-width: 720px;
-  margin: 20px auto;
+  margin: 10px auto;
   padding: 20px;
   background-color: white ;
 }
@@ -47,14 +47,13 @@ ul {
 
 .user-info img{
   float: left;
-  margin: 0 20px 20px 0;
-  max-height: 200px;
+  margin: 0px 20px 20px 0px; 
+  max-height: 250px;
 }
 
 .user-name a{
   text-transform: uppercase;
   text-decoration: none;
-  font-family: 'Trebuchet MS', Arial, sans-serif;
   font-size: 1.2em;
   color: #5b5959;
 }
@@ -95,11 +94,34 @@ ul {
 }
 .repos li, .starred li{
   margin: 20px 0px;
-  
+  border-bottom: 1px solid gray;
+  text-align: right;
+  padding: 5px;
 }
 .repos li a, .starred li a{
   font-size: 18px;
   text-decoration: none;
   text-transform: uppercase;
   color: #5b5959;
+
+}
+.preloader{
+  display: flex;
+  justify-content:center; 
+}
+.preloader img{
+  width: 195px;
+  height: 130px;
+}
+
+@media (max-width: 739px) {
+  .app{
+    margin:10px
+  }
+  .title h1{
+    font-size: 1.2em;
+  }
+  .user-info  a{
+    text-align: center;
+  }
 }

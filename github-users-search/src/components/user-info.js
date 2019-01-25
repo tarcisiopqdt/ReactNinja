@@ -4,7 +4,7 @@ import React, {PropTypes} from 'react'
 
 const UserInfo = ({userinfo}) => (
   <div className='user-info'>
-    <img src={userinfo.photo} />
+    <div className='imgShadow'><img src={userinfo.photo} /></div>
     <h1 className='user-name'>
       <a href={`https://github.com/${userinfo.login}`}>{userinfo.username}</a>
     </h1>
@@ -24,8 +24,7 @@ UserInfo.propTypes = {
     repos: PropTypes.number.isRequired,
     followers: PropTypes.number.isRequired,
     following: PropTypes.number.isRequired
-  }),
-
+  })
 }
 
 export default UserInfo

@@ -1,32 +1,35 @@
 'use strict'
 
 import React, { Component } from 'react'
-import AppContent from './components/app-content';
+import AppContent from './components/app-content'
 import ajax from '@fdaciuk/ajax'
 
 class App extends Component {
-  constructor() {
+  constructor () {
     super()
     this.state = {
       userinfo: null,
       repos: [],
-      starred: []
+      starred: [],
+      isFetching: false
     }
+    this.handleSearch = this.handleSearch.bind(this)
   }
-  getGithubApiUrl(username,type){
-    const internalUsername = username ?  `/${username}` : ''
+  getGithubApiUrl (username, type) {
+    const internalUsername = username ? `/${username}` : ''
     const internalType = type ? `/${type}` : ''
     return `https://api.github.com/users${internalUsername}${internalType}`
   }
 
-  handleSearch(e) {
+  handleSearch (e) {
     const value = e.target.value
     const keyCode = e.which || e.keyCode
     const ENTER = 13
-   
+
     if (keyCode === ENTER) {
-      const target = e.target
-      target.disabled = true
+      this.setState({
+        isFetching: true
+      })
       ajax().get(this.getGithubApiUrl(value))
         .then((result) => {
           this.setState({
@@ -43,15 +46,17 @@ class App extends Component {
           })
         })
         .always(() => {
-          target.disabled = false
+          this.setState({
+            isFetching: false
+          })
         })
     }
   }
 
-  getRepos(type) {
+  getRepos (type) {
     return () => {
       const username = this.state.userinfo.login
-      ajax().get(this.getGithubApiUrl(username,type))
+      ajax().get(this.getGithubApiUrl(username, type))
         .then((result) => {
           this.setState({
             [type]: result
@@ -60,12 +65,13 @@ class App extends Component {
     }
   }
 
-  render() {
+  render () {
     return <AppContent
       userinfo={this.state.userinfo}
       repos={this.state.repos}
       starred={this.state.starred}
-      handleSearch={(e) => this.handleSearch(e)}
+      isFetching={this.state.isFetching}
+      handleSearch={this.handleSearch}
       getRepos={this.getRepos('repos')}
       getStarred={this.getRepos('starred')}
     />
