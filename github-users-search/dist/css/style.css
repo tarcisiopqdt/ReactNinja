@@ -18,7 +18,7 @@ ul {
 }
 
 .app{
-  max-width: 600px;
+  max-width: 720px;
   margin: 20px auto;
   padding: 20px;
   background-color: white ;
@@ -93,8 +93,13 @@ ul {
   font-size: 28px;
   font-family: 'Trebuchet MS', Arial, sans-serif;
 }
-
+.repos li, .starred li{
+  margin: 20px 0px;
+  
+}
 .repos li a, .starred li a{
-  font-size: 20px;
+  font-size: 18px;
   text-decoration: none;
+  text-transform: uppercase;
+  color: #5b5959;
 }
