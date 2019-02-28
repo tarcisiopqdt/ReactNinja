@@ -1,0 +1,35 @@
+1º passo = criar package.json
+
+2º passo = npm install --save-dev jest-cli
+
+3ª passo = criar arquivo de teste e criar uma função it("meu teste", function(){})
+
+4º passo = definir no package.json o jest + code coverage (cobertura de código): "scripts": {"test": "jest --coverage"}
+
+5º passo(opcional) = npm install --save-dev chai
+
+
+6º passo =  PARA O JEST ENTENDER ES6 PRECISAMOS:
+- babel-core //
+- babel-jest
+- babel-preset-es2015
+- babel-preset-stage-0
+
+npm install --save-dev babel-core babel-jest babel-preset-es2015 babel-preset-stage-0
+
+7º passo = rodar um npm test e ver se tudo ocorreu bem
+
+//ZERAR CACHE
+npm test -- --no-cache
+
+
+USAREMOS AS SEGUINTES FUNÇÕES PARA DESENVOLVER OS TESTES:
+- describe()
+- it() || test()
+- expect().toBe()
+
+OBS: O Jest sempre procura por:
+- um diretório __teste__ 
+- qualquer arquivo com .test.js (ex: meuArquivo.test.js)
+- qualquer arquivo com .spec.js (ex: meuArquivo.spec.js)
+
